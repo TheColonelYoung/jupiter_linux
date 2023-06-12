@@ -2379,6 +2379,13 @@ Params: rotation                Mounting rotation of the camera sensor (0 or
         cam0                    Adopt the default configuration for CAM0 on a
                                 Compute Module (CSI0, i2c_vc, and cam0_reg).
 
+Name:   imx678
+Info:   Sony IMX678 camera module.
+Load:   dtoverlay=imx678,<param>=<val>
+Params: media-controller        Configure use of Media Controller API for
+                                configuring the sensor (default on)
+        cam0                    Adopt the default configuration for CAM0 on a
+                                Compute Module (CSI0, i2c_vc, and cam0_reg).
 
 Name:   imx708
 Info:   Sony IMX708 camera module.
