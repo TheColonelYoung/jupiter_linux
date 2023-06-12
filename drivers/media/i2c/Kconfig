@@ -73,6 +73,7 @@ config VIDEO_TDA1997X
 	select V4L2_FWNODE
 	select MEDIA_CONTROLLER
 	select VIDEO_V4L2_SUBDEV_API
+	select V4L2_FWNODE
 	help
 	  V4L2 subdevice driver for the NXP TDA1997x HDMI receivers.
 
@@ -199,7 +200,6 @@ menu "RDS decoders"
 config VIDEO_SAA6588
 	tristate "SAA6588 Radio Chip RDS decoder support"
 	depends on VIDEO_V4L2 && I2C
-
 	help
 	  Support for this Radio Data System (RDS) decoder. This allows
 	  seeing radio station identification transmitted using this
@@ -938,6 +938,20 @@ config VIDEO_IMX519
 
 	  To compile this driver as a module, choose M here: the
 	  module will be called IMX519.
+
+config VIDEO_IMX678
+	tristate "Sony IMX678 sensor support"
+	depends on OF_GPIO
+	depends on I2C && VIDEO_DEV
+	select VIDEO_V4L2_SUBDEV_API
+	select MEDIA_CONTROLLER
+	select V4L2_FWNODE
+	help
+	  This is a Video4Linux2 sensor driver for the Sony
+	  IMX678 camera.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called imx678.
 
 config VIDEO_IMX708
 	tristate "Sony IMX708 sensor support"
